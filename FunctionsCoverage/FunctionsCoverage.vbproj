@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFA8DBBD-BAC2-483A-9BF1-B09D0211784C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>FunctionsCoverage</RootNamespace>
+    <AssemblyName>FunctionsCoverage</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Console</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FunctionsCoverage.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FunctionsCoverage.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.core, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ResClient">
+      <HintPath>..\..\RescoCrs\Version 6\Source8\RescoWin\ResWinResco\bin\ResClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ResClientUnitTest">
+      <HintPath>..\..\RescoCrs\Version 6\Source8\RescoRules\ResClient\_UnitTest\bin\ResClientUnitTest.dll</HintPath>
+    </Reference>
+    <Reference Include="ResFramework">
+      <HintPath>..\..\RescoCrs\Version 6\Source8\RescoRules\ResFramework\obj\Debug\ResFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ResServer">
+      <HintPath>..\..\RescoCrs\Version 6\Source8\RescoRules\ResServer\obj\Debug\ResServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ResServerUnitTest">
+      <HintPath>..\..\RescoCrs\Version 6\Source8\RescoRules\ResServer\_UnitTest\obj\Debug\ResServerUnitTest.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CQueryActivityCoverage.vb" />
+    <Compile Include="CQueryArchiveCoverage.vb" />
+    <Compile Include="CQueryArticleCoverage.vb" />
+    <Compile Include="CQueryAuditCoverage.vb" />
+    <Compile Include="CQueryBenefitCoverage.vb" />
+    <Compile Include="CQueryBookingCoverage.vb" />
+    <Compile Include="CQueryCancellationCoverage.vb" />
+    <Compile Include="CQueryCategoryCoverage.vb" />
+    <Compile Include="CQueryCentreCoverage.vb" />
+    <Compile Include="CQueryCompanyCoverage.vb" />
+    <Compile Include="CQueryContractCoverage.vb" />
+    <Compile Include="CQueryEventCoverage.vb" />
+    <Compile Include="CQueryFolioCoverage.vb" />
+    <Compile Include="CQueryInvoiceCoverage.vb" />
+    <Compile Include="CQueryItemCoverage.vb" />
+    <Compile Include="CQueryJournalCoverage.vb" />
+    <Compile Include="CQueryMailCoverage.vb" />
+    <Compile Include="CQueryMaintenanceCoverage.vb" />
+    <Compile Include="CQueryNoteCoverage.vb" />
+    <Compile Include="CQueryPackageCoverage.vb" />
+    <Compile Include="CQueryPaymentCoverage.vb" />
+    <Compile Include="CQueryPostingCoverage.vb" />
+    <Compile Include="CQueryPriceCoverage.vb" />
+    <Compile Include="CQueryRemarkCoverage.vb" />
+    <Compile Include="CQueryReminderCoverage.vb" />
+    <Compile Include="CQueryReportCoverage.vb" />
+    <Compile Include="CQueryRestrictionCoverage.vb" />
+    <Compile Include="CQueryUserCoverage.vb" />
+    <Compile Include="CQueryTypesCoverage.vb" />
+    <Compile Include="CQueryTripCoverage.vb" />
+    <Compile Include="CQuerySurveyCoverage.vb" />
+    <Compile Include="CQuerySurchargeCoverage.vb" />
+    <Compile Include="CsvCheck.vb" />
+    <Compile Include="Main.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WriteToCsvFile.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
